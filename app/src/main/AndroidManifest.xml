@@ -21,7 +21,6 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.s205465.lykkehjulet.GameActivity" />
 
     </application>
 </manifest>

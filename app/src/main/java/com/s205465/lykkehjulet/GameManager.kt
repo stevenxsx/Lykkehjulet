@@ -61,7 +61,7 @@ class GameManager {
     fun generateUnderscores(word: String) {
         val sb = StringBuilder()
         word.forEach { char ->
-            if (char == '/') {
+            if (char == ' ') {
                 sb.append(' ')
             } else {
                 sb.append("_")
