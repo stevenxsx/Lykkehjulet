@@ -5,6 +5,10 @@
       <map>
         <entry key="..\:/Users/Shroom/StudioProjects/Lykkehjulet/app/src/main/res/layout/activity_game.xml" value="0.33" />
         <entry key="..\:/Users/Shroom/StudioProjects/Lykkehjulet/app/src/main/res/layout/activity_main.xml" value="0.265625" />
+        <entry key="..\:/Users/Shroom/StudioProjects/Lykkehjulet/app/src/main/res/layout/fragment_game.xml" value="0.33559782608695654" />
+        <entry key="..\:/Users/Shroom/StudioProjects/Lykkehjulet/app/src/main/res/layout/fragment_game_lost.xml" value="0.33559782608695654" />
+        <entry key="..\:/Users/Shroom/StudioProjects/Lykkehjulet/app/src/main/res/layout/fragment_game_won.xml" value="0.33559782608695654" />
+        <entry key="..\:/Users/Shroom/StudioProjects/Lykkehjulet/app/src/main/res/menu/menu_main.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>

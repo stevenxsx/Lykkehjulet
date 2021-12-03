@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.children
+import androidx.navigation.findNavController
 
 class MainActivity : AppCompatActivity() {
 
@@ -29,7 +30,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_game)
+        setContentView(R.layout.activity_main)
+
+        //setupActionBarWithNavController(findNavController(R.id.main_fragment))
+
         //imageView = findViewById(R.id.imageView)
         wordTextView = findViewById(R.id.wordTextView)
         lettersUsedTextView = findViewById(R.id.lettersUsedTextView)
@@ -66,6 +70,12 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    override fun onSupportNavigateUp(): Boolean {
+        val navController = findNavController(R.id.NavHostFragment)
+        return navController.navigateUp() || return super.onSupportNavigateUp()
+
+    }
+
     private fun updateUI(gameState: GameState) {
         when (gameState) {
             is GameState.Lost -> showGameLost(gameState.wordToGuess)
@@ -97,7 +107,7 @@ class MainActivity : AppCompatActivity() {
     private fun showGameLost(wordToGuess: String) {
         Log.wtf("Game Ended","LOST")
         wordTextView.text = wordToGuess
-        gameLostTextView.visibility = View.VISIBLE
+        //gameLostTextView.visibility = View.VISIBLE
         //imageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.game7))
         spinButton.visibility = View.GONE
         lettersLayout.visibility = View.GONE
@@ -106,14 +116,15 @@ class MainActivity : AppCompatActivity() {
     private fun showGameWon(wordToGuess: String) {
         Log.wtf("Game Ended","WON")
         wordTextView.text = wordToGuess
-        gameWonTextView.visibility = View.VISIBLE
+        //gameWonTextView.visibility = View.VISIBLE
         spinButton.visibility = View.GONE
         lettersLayout.visibility = View.GONE
+
     }
 
     private fun startNewGame() {
-        gameLostTextView.visibility = View.GONE
-        gameWonTextView.visibility = View.GONE
+        //gameLostTextView.visibility = View.GONE
+        //gameWonTextView.visibility = View.GONE
         val gameState = gameManager.startNewGame()
         spinButton.visibility = View.VISIBLE
         lettersLayout.visibility = View.VISIBLE
